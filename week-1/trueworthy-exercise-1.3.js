@@ -1,6 +1,17 @@
 var header = require('/Users/leatrueworthy/bu-webdev/web-330/trueworthy-header');
 console.log(header.display("Lea", "Trueworthy", "Exercise 1.3"));
 
+
+/*
+============================================
+; Title:  Class Refresher
+; Author: Professor Krasso 
+; Date:   20 January 2019
+; Modified By: Lea Trueworthy
+; Description: Exercise 1.3 - class refresher *ring ring*
+;===========================================
+*/
+
 /*
  Expected output:
 
