@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+============================================
+; Title:  trueworthy-exercise-5.2.html
+; Author: Richard Krasso
+; Modified by: Lea Trueworthy
+; Date:   23 March 2019
+; Description: The Proxy Pattern
+;===========================================
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 5.2 - The Proxy Pattern</title>
+<style>
+	  
+	.navbar {
+		width: 100%;
+		padding: 10px 15px;
+		color: orange;
+		background:#E77A0A
+	}	
+	.navbar-name{
+		color: white;
+		font-size: 22px;
+	}
+	  
+	  </style>
+    <!-- jquery Reference Library -->
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/5DACB2B0-5003-6543-8B39-D8EE6E4FC44C/main.js"
+      charset="UTF-8"
+    ></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+	  
+	  <nav class="navbar navbar-dark bg-dark">
+      <a href="#" class="navbar-name">Home</a>
+    </nav>
+    <br /><br />
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2> Exercise 5.2 - The Proxy Pattern</h2>
+
+          <button id="btnProxy">Click for Proxy</button>
+
+          <br/>
+			<br>
+          <span id="proxyResults"></span>
+
+        </div>
+      </div>
+    </div>
+	  
+	  <script>
+    $(function() {
+      var tabby = {
+        name: "Garfield",
+        species: "Tabby Cat",
+		 color: "orange",
+		  dislikes: "Mondays",
+        display: function() {
+          $("#proxyResults").html("");
+          $("#proxyResults").append("<br />Name: " + this.name + "<br/>Species: " + this.species + "</br>Color: " + this.color + "</br>Dislikes: " + this.dislikes);
+        }
+      };
+      $("#btnProxy").click($.proxy(tabby, "display"));
+    });
+  </script>
+	 <br><br><img src="garfield.png" alt="">
+  </body>
+</html>
