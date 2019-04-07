@@ -1,0 +1,116 @@
+<!--
+============================================
+; Title:  trueworthy-assignment-7.4.html
+; Author: Richard Krasso
+; Modified by: Lea Trueworthy
+; Date:   7 April 2019
+; Description: Other bindings
+;===========================================
+-->
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Stylesheet - Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
+
+    <!-- JavaScript Libraries -->
+    <script type="text/javascript"
+        src="https://gc.kis.v2.scr.kaspersky-labs.com/5DACB2B0-5003-6543-8B39-D8EE6E4FC44C/main.js"
+        charset="UTF-8"></script>
+    <script src="../knockout-v3.5.0.js"></script>
+    <style>
+        th {
+            background-color: steelblue;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: white;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact Page</a>
+            </li>
+        </ul>
+    </nav>
+
+    <title>Assignment 7.4</title>
+    <div class="container" role="main">
+        <br /> <br />
+        <table class="table table-light table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+
+            <tbody data-bind="foreach: tutorial">
+                <tr>
+                    <td data-bind="text: title"></td>
+                    <td data-bind="text: description"></td>
+                    <td><a data-bind="text: url, attr: {href: url}" target="_blank"></a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <script>
+        function TutorialViewModel() {
+            this.tutorial = ko.observableArray([ // values of the table
+                {
+                    title: "Introduction to Javascript",
+                    description: "Let’s see what’s so special about JavaScript, what we can achieve with it, and which other technologies play well with it.",
+                    url: "https://javascript.info/intro"
+                },
+                {
+                    title: "Hello, world!",
+                    description: "The tutorial that you’re reading is about core JavaScript, which is platform-independent. ",
+                    url: "https://javascript.info/hello-world"
+                },
+                {
+                    title: "Code structure",
+                    description: "The first thing we’ll study is the building blocks of code.",
+                    url: "https://javascript.info/structure"
+                },
+                {
+                    title: "Variables",
+                    description: "JavaScript application needs to work with information.",
+                    url: "https://javascript.info/variables"
+                },
+                {
+                    title: "Data types",
+                    description: "A variable in JavaScript can contain any data.",
+                    url: "https://javascript.info/types"
+                }
+            ]);
+        };
+        ko.applyBindings(new TutorialViewModel());
+    </script>
+</body>
+
+</html>
